@@ -22,7 +22,7 @@
 
 
         <input type="text" v-model="newEmail">
-        <button @click="addNewEmail">Add Emails</button>
+        <button @click="addNewEmail">Add Emaidl</button>
     </div>
 
 
