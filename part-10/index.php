@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Part 9-1</title>
+    <title>Part 10</title>
     <script src="js/vue.js"></script>
 </head>
 
@@ -11,6 +11,7 @@
     <div id="info" style="text-align:center;">
         <h2>{{ name | lower }}</h2>
         <h3>{{ address | upper }}</h3>
+        <h4>To Date: {{ today }}</h4>
     </div>
 
 
@@ -26,11 +27,17 @@
 
 
 
+
+    // date function filer
+
+
+
     var app = new Vue({
         el: "#info",
         data: {
             name: "Hello World",
             address: "My address In jamalpur",
+            today: new Date(),
         },
 
         filters: {
