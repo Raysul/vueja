@@ -17,7 +17,10 @@
 
         .fade-enter-active,
         .fade-leave-active {
-            transition: margin-top 1s;
+            transition: margin-left 0.5s;
+            /* transition: transform .5s; */
+            /* transition: margin-top 1s; */
+            /* transition: background 1s; */
         }
 
         .fade-enter,
@@ -25,22 +28,29 @@
 
         /* .fade-leave-active below version 2.1.8 */
             {
-            margin-top: -555;
+            margin-left: -2222px;
+            /* transform: rotate(180deg); */
+            /* margin-top: -555; */
+            /* background: red; */
         }
     </style>
 </head>
 
 <body>
     <div id="info" style="text-align:center;">
-        <button @click="show = !show">admintion</button>
-
-        <div class="container">
-            <transition name="fade">
-                <div class="foo" v-if="show">
-                    <p>This is a animation</p>
-                </div>
+        <input type="text" v-model="newSkill">
+        <button @click="addNewSill()">Add</button>
+        <transition-group name="fade">
+            <li v-for="(skill, i ) in skills" :key="i">
+                {{ i+1 }} {{ skill }} <button @click="remodeSkill(i)">X</button>
+            </li>
             </transition>
-        </div>
+
+
+
+
+
+
     </div>
 
 
@@ -48,8 +58,24 @@
         var app = new Vue({
             el: "#info",
             data: {
-                show: true
+                newSkill: "",
+                skills: [
+                    "html", "css", "php", "java"
+                ]
+            },
+
+            methods: {
+                addNewSill: function () {
+                    this.skills.push(this.newSkill);
+                    this.newSkill = "";
+                },
+                remodeSkill: function (i) {
+                    this.skills.splice(i, 1);
+                }
+
+
             }
+
         });
     </script>
 </body>
