@@ -22,6 +22,9 @@
 						<router-link class="nav-link" to="about"> About </router-link>
 					</li>
 					<li>
+						<router-link class="nav-link" to="text">text</router-link>
+					</li>
+					<li>
 						<router-link class="nav-link" to="contact"> Contact </router-link>
 					</li>
 				</ul>
@@ -33,16 +36,25 @@
 		</div>
 	</div>
 
+
 	<!-- Vue Pages -->
 	<script src="pages/home.vue.js"></script>
 	<script src="pages/about.vue.js"></script>
 	<script src="pages/contact.vue.js"></script>
+	<script src="product/test.vue.js"></script>
+
+
 
 	<script>
+
+
+
+
 		var routes = [
 			{ path: '/', component: Home },
 			{ path: '/about', component: About },
-			{ path: '/contact', component: Contact }
+			{ path: '/contact', component: Contact },
+			{ path: "/text", component: Test },
 		];
 
 		var router = new VueRouter({
