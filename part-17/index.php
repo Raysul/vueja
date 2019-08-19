@@ -46,12 +46,6 @@
                 {{ i+1 }} {{ skill }} <button @click="remodeSkill(i)">X</button>
             </li>
             </transition>
-
-
-
-
-
-
     </div>
 
 
@@ -73,8 +67,6 @@
             remodeSkill: function(i) {
                 this.skills.splice(i, 1);
             }
-
-
         }
 
     });
